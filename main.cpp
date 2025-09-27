@@ -1,4 +1,5 @@
 #include <Novice.h>
+#include "math/Matrix4x4/Matrix4x4.h"
 
 const char kWindowTitle[] = "LE2A_12_フクダソウワ_MT4";
 
@@ -11,6 +12,20 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	// キー入力結果を受け取る箱
 	char keys[256] = {0};
 	char preKeys[256] = {0};
+
+
+	/*---------------
+	    変数を作る
+	---------------*/
+
+	// 軸方向
+	Vector3 axis = Normalize(Vector3(1.0f, 1.0f, 1.0f));
+
+	// 角度
+	float angle = 0.44f;
+
+	Matrix4x4 rotateMatrix = MakeRotateAxisAngle(axis, angle);
+
 
 	// ウィンドウの×ボタンが押されるまでループ
 	while (Novice::ProcessMessage() == 0) {
@@ -32,6 +47,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		///
 		/// ↓描画処理ここから
 		///
+
+		MatrixScreenPrintf(0, 0, rotateMatrix, "rotateMatrix");
 
 		///
 		/// ↑描画処理ここまで
