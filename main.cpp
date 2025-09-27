@@ -18,13 +18,32 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	    変数を作る
 	---------------*/
 
-	// 軸方向
-	Vector3 axis = Normalize(Vector3(1.0f, 1.0f, 1.0f));
+	// 現在の方向 0
+	Vector3 from0 = Normalize(Vector3(1.0f, 0.7f, 0.5f));
 
-	// 角度
-	float angle = 0.44f;
+	// 目標の方向 0
+	Vector3 to0 = -from0;
 
-	Matrix4x4 rotateMatrix = MakeRotateAxisAngle(axis, angle);
+
+	// 現在の方向 1
+	Vector3 from1 = Normalize(Vector3(-0.6f, 0.9f, 0.2f));
+
+	// 目標の方向 1
+	Vector3 to1 = Normalize(Vector3(0.4f, 0.7f, -0.5f));
+
+
+	// 回転行列 0
+	Matrix4x4 rotateMatrix0 = DirectionToDirection(Normalize(Vector3(1.0f, 0.0f, 0.0f)), Normalize(Vector3(-1.0f, 0.0f, 0.0f)));
+
+	// 回転行列 1
+	Matrix4x4 rotateMatrix1 = DirectionToDirection(from0, to0);
+
+	// 回転行列 2
+	Matrix4x4 rotateMatrix2 = DirectionToDirection(from1, to1);
+
+
+	// 出力文字の高さ
+	const int32_t kRowHeight = 128;
 
 
 	// ウィンドウの×ボタンが押されるまでループ
@@ -48,7 +67,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		/// ↓描画処理ここから
 		///
 
-		MatrixScreenPrintf(0, 0, rotateMatrix, "rotateMatrix");
+		MatrixScreenPrintf(0, 0, rotateMatrix0, "rotateMatrix0");
+		MatrixScreenPrintf(0, kRowHeight, rotateMatrix1, "rotateMatrix1");
+		MatrixScreenPrintf(0, kRowHeight * 2, rotateMatrix2, "rotateMatrix2");
 
 		///
 		/// ↑描画処理ここまで
