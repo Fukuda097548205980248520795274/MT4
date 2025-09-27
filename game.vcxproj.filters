@@ -14,6 +14,18 @@
     <Filter Include="KamataEngine\Adapter">
       <UniqueIdentifier>{c6468eb4-788b-4a83-b207-a5f4804e56c5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{c8e02144-0b64-4a23-b3fe-85c7c98f5559}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math\Matrix4x4">
+      <UniqueIdentifier>{76d5c43e-ede3-4832-90b8-cbceb762da24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math\Vector3">
+      <UniqueIdentifier>{0ca72e8e-53a9-414f-b023-04b3b0b4ca37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math\Matrix3x3">
+      <UniqueIdentifier>{23cc2845-51ea-499e-9339-b6c9179b3978}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\KamataEngine\DirectXGame\base\DirectXCommon.cpp">
@@ -37,6 +49,15 @@
     </ClCompile>
     <ClCompile Include="C:\KamataEngine\DirectXGame\base\StringUtility.cpp">
       <Filter>KamataEngine\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Matrix4x4\Matrix4x4.cpp">
+      <Filter>Math\Matrix4x4</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Vector3\Vector3.cpp">
+      <Filter>Math\Vector3</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Matrix3x3\Matrix3x3.cpp">
+      <Filter>Math\Matrix3x3</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +131,15 @@
     <ClInclude Include="C:\KamataEngine\DirectXGame\2d\ImGuiManager.h" />
     <ClInclude Include="C:\KamataEngine\DirectXGame\base\StringUtility.h">
       <Filter>KamataEngine\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Matrix4x4\Matrix4x4.h">
+      <Filter>Math\Matrix4x4</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Vector3\Vector3.h">
+      <Filter>Math\Vector3</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Matrix3x3\Matrix3x3.h">
+      <Filter>Math\Matrix3x3</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
